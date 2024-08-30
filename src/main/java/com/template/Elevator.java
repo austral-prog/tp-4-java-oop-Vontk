@@ -1,11 +1,37 @@
 package com.template;
 
 public class Elevator {
+    private final int minFloor;
+    private final int maxFloor;
+    private final int maxCapacity;
+    private int currentFloor;
+    private int currentCapacity;
 
-
-
-    // Implement this class by observing the tests in this repo. From those you will be able
-    // to pick what the constructors params are, what the methods are and what they should do.
-
-
-}
+    public Elevator(int minFloor, int maxFloor, int maxCapacity) {
+        this.minFloor = minFloor;
+        this.maxFloor = maxFloor;
+        this.maxCapacity = maxCapacity;
+        this.currentFloor = minFloor;
+        this.currentCapacity = 0;
+    }
+    public int getCurrentFloor() {
+        return currentFloor;
+    }
+    public void moveToFloor(int callingFloor) {
+        if (callingFloor <= maxFloor && callingFloor >= minFloor) {
+            currentFloor = callingFloor;
+        }
+    }
+    public int getPassengerCount() {
+        return currentCapacity;
+    }
+    public void addPassenger(){
+        if (currentCapacity < maxCapacity) {
+            currentCapacity++;
+        }
+    }
+    public void removePassenger(){
+        if (currentCapacity > 0) {
+            currentCapacity--;
+        }
+    }
