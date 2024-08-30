@@ -35,3 +35,4 @@ public class Elevator {
             currentCapacity--;
         }
     }
+}
